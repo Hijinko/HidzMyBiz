@@ -1,0 +1,37 @@
+MenuLayout:
+	AddFormLayout:
+	
+<AddFormLayout>:
+	orientation: 'vertical'
+	encode_file: EncodeF
+	decode_file: DecodeF
+	file_name: Fname
+	file_message: fmsg
+	
+	BoxLayout:
+		size_hint_y: None
+		height: '40dp'
+		TextInput: #file input field
+			id: Fname
+			multiline: False
+			hint_text: 'Enter Filename'
+	BoxLayout:
+		size_hint_y: None
+		height: '60dp'
+		Button: # Encode Button
+			id: EncodeF
+			text: 'Encode'
+			on_press: root.Encode_Message()
+			background_color: .0, .5, .8, 1
+		Button: # Decode Button
+			id: DecodeF
+			text: 'Decode'
+			on_press: root.Decode_Message()
+			background_color: .0, .5, .8, 1
+	TextInput: # mesage field
+		id: fmsg
+		#background_normal: 'tiger.gif'
+	ListView: # copyright information
+		size_hint_y: None
+		height: '40dp'
+		item_strings: ['\xa9 Hidz My Biz 2018, Creator; SGT Ellis, Kevin']
